@@ -7,6 +7,11 @@ The board runs linux while the PRUs are "bare-metal"
 This example does not have anything novel about it. 
 It mostly just combines some of the examples from the [BeagleBone Cookbook](https://docs.beagleboard.org/beaglebone-cookbook.pdf) and the [PRU Cookbook](https://docs.beagleboard.org/books/pru-cookbook/index.html) along with the [prusst crate](https://github.com/sbarral/prusst).
 
+The code has two examples in it:
+
+1. A simple multiply accumulate example that shows how memory is shared between the PRU and the main CPU and how the PRU can be used for a simple control loop. The PRU is a 200Mhz RISC processor with a 32 bit multiply accumulate accelerator making it comparable to simple MCUs
+2. A Fibonacci sequence example that shows how the PRU can be used for a real-time task while the main CPU is doing other things. The PRU is not at the mercy of the linux scheduler so it has no jitter. This makes the PRU a good match for things like motor control or communication protocol decoding/encoding.
+
 ## Building and Running
 
 The entire project is designed to be cross-compiled for the BeagleBone from any linux machine.
