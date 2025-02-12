@@ -1,0 +1,10 @@
+[target.armv7-unknown-linux-musleabihf]
+linker = "arm-linux-gnueabihf-gcc"
+runner = [
+    "sh",
+    "-c",
+    "rsync -v target/armv7-unknown-linux-musleabihf/debug/beaglebone_hello pru/*.bin debian@beaglebone.local:~ && ssh debian@beaglebone.local ./beaglebone_hello",
+]
+
+[build]
+target = "armv7-unknown-linux-musleabihf"
